@@ -16,8 +16,12 @@ object main extends App {
     val subFiles = dir.listFiles()
     subFiles.filter(_.getName.startsWith("Project Logs for ")).foreach(rmrf)
     subFiles.filter(_.getName.startsWith("Project Outputs ")).foreach(rmrf)
+    subFiles.filter(_.getName.startsWith("Design Rule Check -")).foreach(rmrf)
+    subFiles.filter(_.getName.endsWith(".PrjPCBStructure")).foreach(rmrf)
+
     subFiles.filter(_.getName == ("History")).foreach(rmrf)
     subFiles.filter(_.getName == ("__Previews")).foreach(rmrf)
+
 
 
   }
